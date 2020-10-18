@@ -24,7 +24,7 @@ const directory = "tmp";
 const clearTmp=()=>{
   fs.readdir(directory, (err, files) => {
   if (err) throw err;
-
+ 
   for (const file of files) {
     fs.unlink(path.join(directory, file), err => {
       if (err) throw err;
@@ -127,8 +127,13 @@ router.get("/logout",authorize,async (req,res)=>{
     if(err){
        console.log(err);
     }else{
-        res.redirect(CLIENT_LOGIN_PAGE_URL);       
+        res.redirect(CLIENT_LOGIN_PAGE_URL);  
+        try{     
         clearTmp();
+        }
+        catch(error){
+          console.log("Error while logging out removing tmp files: ",error);
+        }
     }
  });  
 })

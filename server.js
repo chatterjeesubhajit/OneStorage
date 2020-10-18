@@ -206,6 +206,12 @@ let present=moment();
     fetchFiles(email,query,undefined,socketID);    
 }
 
+var dir = "./tmp";
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
+
 
 app.get("/user/data/read",authCheck, async (req, res) => {
   try {
