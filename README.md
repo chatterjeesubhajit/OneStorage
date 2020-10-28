@@ -68,9 +68,36 @@ This application is built using :
         - If space is not available, all drives are checked in a cyclic iterative manner to find the next drive wherein space is available
         - Upon termination of a session, the last drive used for upload is marked
         - In next session the drive registered after the last session marked drive is used as a starting point
+- Designing the file upload logic was crucial so as to not overrun the memory
+    - Used [express-fileupload](https://www.npmjs.com/package/express-fileupload) to handle multiple files form data
+    - **Used a temporary directory in secondary disk drive to store the uploaded file as buffer before uploading to cloud drive - to avoid overrunning the memory** 
+    - For each drive , **creating a resumable file upload session and providing option of large file upload** was a challenging task as well
 
 - In client side development:
     - **Multiple asynchronous events were to be handled**, and each update needs to be shared across components ( A drive added to the drive list component effectively should add all the files of the drive to files list component) - useState and useContext hooks were crucial to solve this issue
+
+## What I learned
+
+Besides getting more coding proficiency in javascript programming , this project helped me learn the following techniques / skills
+    - Designing effective data schema for noSQL databases
+    - Using web sockets for real time bidirectional communication between server and client
+    - Learning multiple APIs and libraries which I can use effectively in future projects
+    - Designing better client components which maintain and share their state and context information effectively - resulting in an efficient Single Page Application
+    - A more responsive UI design 
+
+## What's next for OneStorage
+    - Providing in-application content editor (document editor,spreadsheet editor) to enable user to create and modify files within application and store them seamlessly
+    - Providing resumable file upload option - Tracking partial upload ( for large files ) by matching byte array content of the file - Efficient and reliable file upload mechanism for the user
+    - Shifting from storing files in secondary disk storage to a reliable and resumable storage option like AWS S3 
+
+## Built With
+- Node.js
+- Express.js
+- MongoDB
+- React
+
+
+
 
 
 
