@@ -1,5 +1,9 @@
 # OneStorage
 
+## Website : https://desolate-bastion-47247.herokuapp.com/
+
+## Video Demo: https://youtu.be/bnYu1dyTB5s
+
 ## Inspiration
 
 With ever increasing dependency on cloud storage to storage and share data across devices, handling multiple cloud drives can get tedious. Also, managing files across drives and remembering which file is stored where is a painful task. A single interface to manage all cloud storage drives at one place shall be easier to handle!
@@ -86,9 +90,9 @@ Besides getting more coding proficiency in javascript programming , this project
     - A more responsive UI design 
 
 ## What's next for OneStorage
-    - Providing in-application content editor (document editor,spreadsheet editor) to enable user to create and modify files within application and store them seamlessly
-    - Providing resumable file upload option - Tracking partial upload ( for large files ) by matching byte array content of the file - Efficient and reliable file upload mechanism for the user
-    - Shifting from storing files in secondary disk storage to a reliable and resumable storage option like AWS S3 
+- Providing in-application content editor (document editor,spreadsheet editor) to enable user to create and modify files within application and store them seamlessly
+- Providing resumable file upload option - Tracking partial upload ( for large files ) by matching byte array content of the file - Efficient and reliable file upload mechanism for the user
+- Shifting from storing files in secondary disk storage to a reliable and resumable storage option like AWS S3 
 
 ## Built With
 - Node.js
