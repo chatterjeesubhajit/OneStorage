@@ -31,7 +31,7 @@ This Single Page Application allows users to link their drives (Google Drive, Mi
     - File to be deleted is removed from the drive where it was uploaded and upon successful deletion , the metadata of the file is also removed from the application database
     - Simultaneously user interface is refreshed with the changes ( by removing the deleting file from listing)
 
-5. Drive delete:
+5. **Drive delete**:
     - User can choose to remove a linked drive any time as he/she wishes- The drive metadata and access token is removed from the application database
     - The user can also remove the application access from their drive settings (e.g. [Google drive third party access removal](https://myaccount.google.com/permissions) )  to reset application permissions
 
@@ -83,11 +83,11 @@ This application is built using :
 ## What I learned
 
 Besides getting more coding proficiency in javascript programming , this project helped me learn the following techniques / skills
-    - Designing effective data schema for noSQL databases
-    - Using web sockets for real time bidirectional communication between server and client
-    - Learning multiple APIs and libraries which I can use effectively in future projects
-    - Designing better client components which maintain and share their state and context information effectively - resulting in an efficient Single Page Application
-    - A more responsive UI design 
+- Designing effective data schema for noSQL databases
+- Using web sockets for real time bidirectional communication between server and client
+- Learning multiple APIs and libraries which I can use effectively in future projects
+- Designing better client components which maintain and share their state and context information effectively - resulting in an efficient Single Page Application
+- A more responsive UI design 
 
 ## What's next for OneStorage
 - Providing in-application content editor (document editor,spreadsheet editor) to enable user to create and modify files within application and store them seamlessly
