@@ -61,14 +61,14 @@ This application is built using :
         - User schema - this is top most level schema which stores registered user's name ,email and hashed password info , and embeds and document array of Drive schema 
 
 - Another critical challenge was to set up asynchronous tracking function through each of the three drive APIs and update the backend and client end whenever a new file change is tracked.
-    - Here, **sockets were used , wherein each drive refresh component emits event to the speific client with the changes** - bidirectional communication makes real time file metadata update efficient
+    - Here, **sockets were used , wherein each drive refresh component emits event to the specific client with the changes** - bidirectional communication makes real time file metadata update efficient
 - Each drive API returns file and drive info in a different format :
     - For example, google drive apis sends a fixed no. of file info at a time with a token for next batch of files to be pulled, whereas microsoft graph client needs parent folder id to return the files present in the specific folder
-    - Also, file deletions are handled differentl by different APIs, google sends deleted file info as well when fetching file info, whereas dropbox and microsoft graph doesn't
+    - Also, file deletions are handled different by different APIs, google sends deleted file info as well when fetching file info, whereas dropbox and microsoft graph doesn't
     - **Handling these different mode of updates and saving them into a uniform structure was a major challenge**
-- **Creating a file upload logic which fairly uses all drives' storage and also avoids going over limit was crucial and challeneging**
+- **Creating a file upload logic which fairly uses all drives' storage and also avoids going over limit was crucial and challenging**
     - A round robin logic was used
-        -A drive is chosen at begin of an user session. Upon recieving a file, storage availability on the drive is checked, and file is uploaded if space is available to hold the entire file size
+        -A drive is chosen at begin of an user session. Upon receiving a file, storage availability on the drive is checked, and file is uploaded if space is available to hold the entire file size
         - If space is not available, all drives are checked in a cyclic iterative manner to find the next drive wherein space is available
         - Upon termination of a session, the last drive used for upload is marked
         - In next session the drive registered after the last session marked drive is used as a starting point
